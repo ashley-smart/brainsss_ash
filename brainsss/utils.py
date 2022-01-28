@@ -66,11 +66,12 @@ def sbatch(jobname, script, modules, args, logfile, time=1, mem=1, dep='', nice=
         nice = 1000000
 
     if nodes == 1:
-        node_cmd = '-w sh02-07n34 '
+        #node_cmd = '-w sh02-07n34 '  #trc node
+        node_cmd = '-w sh03-12n19'  #bigmem node (I chose based on what my code ran on once)
     else:
         node_cmd = ''
 
-    sbatch_command = "sbatch -J {} -o ./com/%j.out -e {} -t {}:00:00 --nice={} --partition={} --open-mode=append --cpus-per-task={} --begin={} --wrap='{}' {}".format(jobname, logfile, time, nice, node_cmd, mem, begin, command, dep)
+    sbatch_command = "sbatch -J {} -o ./com/%j.out -e {} -t {}:00:00 --nice={} --partition=bigmem {} --open-mode=append --cpus-per-task={} --begin={} --wrap='{}' {}".format(jobname, logfile, time, nice, node_cmd, mem, begin, command, dep)
     sbatch_response = subprocess.getoutput(sbatch_command)
     width = 120
     if not silence_print:
