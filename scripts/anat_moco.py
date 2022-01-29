@@ -31,12 +31,12 @@ sys.stderr = brainsss.Logger_stderr_sherlock(logfile)
 ### Setup paths ###
 ###################
 
-#CHANGE THESE PATHS
-scripts_path = "/home/users/brezovec/projects/brainsss/scripts"
-com_path = "/home/users/brezovec/projects/brainsss/scripts/com"
+# #CHANGE THESE PATHS
+# scripts_path = "/home/users/brezovec/projects/brainsss/scripts"
+# com_path = "/home/users/brezovec/projects/brainsss/scripts/com"
 
-#change this path to your oak directory, something like /oak/stanford/groups/trc/data/Brezovec/data
-dataset_path = "/oak/stanford/groups/trc/data/Brezovec/2P_Imaging/20210220_alex_anat_test"
+# #change this path to your oak directory, something like /oak/stanford/groups/trc/data/Brezovec/data
+# dataset_path = "/oak/stanford/groups/trc/data/Brezovec/2P_Imaging/20210220_alex_anat_test"
 
 ###################
 ### Print Title ###
