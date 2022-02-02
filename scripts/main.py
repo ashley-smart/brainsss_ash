@@ -150,8 +150,8 @@ printlog("")
 ##################
 timepoints = 6761 #number of volumes  Try to unhard-code this to match my actual brains
 step = 10 #how many volumes one job will handle Luke recs 100 for functional and 10 for anatomical
-mem = 8 #luke recs 7 for anatomical (should write this in later to check which one it is)
-time_moco = 4 #no idea what this means
+mem = 23 #number of cpus luke recs 7 for anatomical (should write this in later to check which one it is)
+time_moco = 4 #number of hours for each partial moco
 
 printlog(f"\n{'   MOTION CORRECTION   ':=^{width}}")
 # This will immediately launch all partial mocos and their corresponding dependent moco stitchers
@@ -208,7 +208,7 @@ for fly in flies:
                          script=os.path.join(scripts_path, script),
                          modules=modules,
                          args=args,
-                         logfile=logfile, time=2, mem=20, dep=job_ids_colons, nice=nice, nodes=nodes)
+                         logfile=logfile, time=time_moco, mem=mem, dep=job_ids_colons, nice=nice, nodes=nodes)
     stitcher_job_ids.append(job_id)
 
 if bool(progress_tracker): #if not empty
@@ -231,7 +231,7 @@ for fly in flies:
                          script=os.path.join(scripts_path, script),
                          modules=modules,
                          args=args,
-                         logfile=logfile, time=2, mem=24, nice=nice, nodes=nodes)
+                         logfile=logfile, time=time_moco, mem=mem, nice=nice, nodes=nodes)
     job_ids.append(job_id)
 
 for job_id in job_ids:
