@@ -66,7 +66,8 @@ def sbatch(jobname, script, modules, args, logfile, time=1, mem=1, dep='', nice=
         nice = 1000000
 
     if nodes == 1:  #if pick 2 nodes it will put the job in either node, if you pick 1 node then other people can use the node
-        node_cmd = '-w sh02-07n34 '  #trc node other node '-w sh02-07n33 '
+        node_cmd = ''
+        #node_cmd = '-w sh02-07n34 '  #trc node other node '-w sh02-07n33 '
         #node_cmd = '-w sh03-12n19'  #bigmem node (I chose based on what my code ran on once)
     else:
           node_cmd = ''
