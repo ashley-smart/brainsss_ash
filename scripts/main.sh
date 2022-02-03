@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=bm_brainsss_ash
 #SBATCH --time=4-00:00:00
-#SBATCH --ntasks=2
+#SBATCH --ntasks=1
 #SBATCH --partition=trc
 ##two should comemnt out SBATCH --mem 260G
 #SBATCH --cpus-per-task=20
