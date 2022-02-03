@@ -1,9 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=bm_brainsss_ash
-#SBATCH --time=1-00:00:00
-#SBATCH --ntasks=1
-#SBATCH --partition=bigmem
-#SBATCH --mem 260G
+#SBATCH --time=4-00:00:00
+#SBATCH --ntasks=2
+#SBATCH --partition=trc
+##two should comemnt out SBATCH --mem 260G
+#SBATCH --cpus-per-task=20
 #SBATCH --output=./logs/mainlog.out
 #SBATCH --open-mode=append
 #SBATCH --mail-type=ALL
