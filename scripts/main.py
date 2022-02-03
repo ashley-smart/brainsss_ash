@@ -150,8 +150,8 @@ printlog("")
 ##################
 timepoints = 6761 #number of volumes  Try to unhard-code this to match my actual brains
 step = 10 #how many volumes one job will handle Luke recs 100 for functional and 10 for anatomical
-mem = 23 #number of cpus luke recs 7 for anatomical (should write this in later to check which one it is)
-time_moco = 4 #number of hours for each partial moco
+mem = 20 #number of cpus luke recs 7 for anatomical (should write this in later to check which one it is)
+time_moco = 10 #maximum number of hours for each partial moco
 
 printlog(f"\n{'   MOTION CORRECTION   ':=^{width}}")
 # This will immediately launch all partial mocos and their corresponding dependent moco stitchers
